@@ -5836,3 +5836,24 @@ footer .footer-bottom p {
   background: url(assets/img/preloader.gif) center no-repeat #fff;
   text-align: center;
 }
+
+.form-label{
+    font-size: 13px !important;
+}
+
+.form-label.required:after {
+    content: "*" !important;
+    color: red !important;
+}
+
+label.error {
+    display: block !important;
+    color: #F00;
+    font-size: 12px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
