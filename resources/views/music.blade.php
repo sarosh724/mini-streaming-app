@@ -17,52 +17,21 @@
                         <div class="blog-item-box">
                             <div class="row">
                                 <!-- Single Item -->
+                                @foreach($tracks AS $track)
                                 <div class="col-lg-6 col-md-6 single-item">
                                     <div class="item wow fadeInUp" data-wow-delay="500ms">
                                         <div class="thumb">
-                                            <a href="{{url('/music/pop/1')}}"><img src="{{asset('assets/img/800x600.png')}}" alt="Thumb"></a>
-                                            <div class="post-date">
-                                                12 Jul
+                                            <a href="{{url("/music/{$category}/{$track->id}")}}"><img src="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}" width="800" height="300" alt="Thumb"></a>
+                                            <div class="">
+                                                {{$track->title}}
                                             </div>
+                                            <audio controls autoplay>
+                                                <source src="{{asset("assets/audios/{$track->file_path}")}}" type="audio/mpeg">
+                                            </audio>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="col-lg-6 col-md-6 single-item">
-                                    <div class="item wow fadeInUp" data-wow-delay="600ms">
-                                        <div class="thumb">
-                                            <a href="{{url('/music/pop/1')}}"><img src="{{asset('assets/img/800x600.png')}}" alt="Thumb"></a>
-                                            <div class="post-date">
-                                                15 Aug
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="col-lg-6 col-md-6 single-item">
-                                    <div class="item wow fadeInUp" data-wow-delay="700ms">
-                                        <div class="thumb">
-                                            <a href="{{url('/music/pop/1')}}"><img src="{{asset('assets/img/800x600.png')}}" alt="Thumb"></a>
-                                            <div class="post-date">
-                                                05 Nov
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-                                <!-- Single Item -->
-                                <div class="col-lg-6 col-md-6 single-item">
-                                    <div class="item wow fadeInUp" data-wow-delay="800ms">
-                                        <div class="thumb">
-                                            <a href="{{url('/music/pop/1')}}"><img src="{{asset('assets/img/800x600.png')}}" alt="Thumb"></a>
-                                            <div class="post-date">
-                                                12 Jul
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                                 <!-- End Single Item -->
                             </div>
                         </div>
@@ -88,22 +57,22 @@
                                 <div class="sidebar-info">
                                     <ul>
                                         <li>
-                                            <a href="{{url('music/rock')}}">Rock <span>69</span></a>
+                                            <a href="{{url('music/rock')}}">Rock</a>
                                         </li>
                                         <li>
-                                            <a href="{{url('music/pop')}}">Pop <span>25</span></a>
+                                            <a href="{{url('music/pop')}}">Pop</a>
                                         </li>
                                         <li>
-                                            <a href="{{url('music/hiphop')}}">Hip Hop <span>18</span></a>
+                                            <a href="{{url('music/hiphop')}}">Hip Hop</a>
                                         </li>
                                         <li>
-                                            <a href="{{url('music/classical')}}">Classical <span>37</span></a>
+                                            <a href="{{url('music/classical')}}">Classical</a>
                                         </li>
                                         <li>
-                                            <a href="{{url('music/funk')}}">Funk <span>12</span></a>
+                                            <a href="{{url('music/funk')}}">Funk</a>
                                         </li>
                                         <li>
-                                            <a href="{{url('music/jazz')}}">Jazz <span>12</span></a>
+                                            <a href="{{url('music/jazz')}}">Jazz</a>
                                         </li>
                                     </ul>
                                 </div>

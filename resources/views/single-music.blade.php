@@ -1,11 +1,11 @@
 @extends('template.index')
 
 @section('page-name')
-    Music - {{$type}}
+    Music - {{$category}}
 @stop
 
 @section('content')
-    @include('partials.breadcrumb', ['list' => ['/' => 'home', 'music' => 'music', "$type" => "$type"], 'heading' => $type . ' Music'])
+    @include('partials.breadcrumb', ['list' => ['/' => 'home', 'music' => 'music', "$category" => "$category"], 'heading' => $category . ' Music'])
 
     <!-- Start Blog
     ============================================= -->
@@ -19,13 +19,29 @@
                             <div class="single-item">
                                 <div class="item wow fadeInUp">
                                     <div class="thumb">
-                                        <a href="#"><img src="{{asset('assets/img/1500x700.png')}}" alt="Thumb"></a>
-                                        <div class="post-date">
-                                            12 Jul
+                                        <a href="#"><img src="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}" alt="Thumb"></a>
+                                        <div class="">
+                                            {{$track->title}}
                                         </div>
+                                        <audio controls autoplay>
+                                            <source src="{{asset("assets/audios/{$track->file_path}")}}" type="audio/mpeg">
+                                        </audio>
                                     </div>
                                 </div>
                             </div>
+                            @include('commentsDisplay', ['comments' => $track->comments, 'track_id' => $track->id])
+                            <hr/>
+                            <h4>Add comment</h4>
+                            <form method="post" action="{{route('comments.store')}}">
+                                @csrf
+                                <div class="form-group">
+                                    <textarea class="form-control" name="body"></textarea>
+                                    <input type="hidden" name="track_id" value="{{ $track->id }}" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-success" value="Add Comment" />
+                                </div>
+                            </form>
                             <!-- End Single Item -->
                         </div>
                     </div>
