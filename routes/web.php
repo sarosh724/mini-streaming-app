@@ -48,7 +48,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('music/{category}', [TrackController::class, 'index']);
+Route::get('music/{category}{search?}', [TrackController::class, 'index']);
 
 Route::get('music/{category}/{id}', [TrackController::class, 'show']);
 

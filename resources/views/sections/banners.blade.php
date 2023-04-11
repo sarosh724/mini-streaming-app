@@ -6,15 +6,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner carousel-zoom">
             <div class="carousel-item active">
-                <div class="slider-thumb bg-cover" style="background-image: url({{asset('assets/banners/banner-1.jpg')}});"></div>
+                <div class="slider-thumb bg-cover" style="background-image: url({{asset('assets/banners/banner-3.jpg')}});"></div>
                 <div class="box-table">
                     <div class="box-cell shadow dark">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="content">
-                                        <h2 data-animation="animated slideInRight">Meet the <strong>Best Doctors</strong></h2>
-                                        <h4 data-animation="animated slideInLeft">Best institution, Good services</h4>
+                                        <h2 data-animation="animated slideInRight">Let the<strong> Music Speak!</strong></h2>
+                                        <h4 data-animation="animated slideInLeft">Music is the answer.</h4>
                                         <a data-animation="animated fadeInUp" class="btn btn-md btn-gradient" href="#music-box">Discover More</a>
                                     </div>
                                 </div>
@@ -31,8 +31,8 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-1">
                                     <div class="content">
-                                        <h2 data-animation="animated slideInRight">Meet the <strong>Best Hospital</strong></h2>
-                                        <h4 data-animation="animated slideInLeft">Best institution, Good services</h4>
+                                        <h2 data-animation="animated slideInRight">My brain is <strong>85% song lyrics.</strong></h2>
+                                        <h4 data-animation="animated slideInLeft">Music is my life.</h4>
                                         <a data-animation="animated fadeInUp" class="btn btn-md btn-gradient" href="#music-box">Discover More</a>
                                     </div>
                                 </div>

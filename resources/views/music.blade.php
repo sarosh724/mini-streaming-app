@@ -17,6 +17,7 @@
                         <div class="blog-item-box">
                             <div class="row">
                                 <!-- Single Item -->
+                                @if(count($tracks))
                                 @foreach($tracks AS $track)
                                 <div class="col-lg-6 col-md-6 single-item">
                                     <div class="item wow fadeInUp" data-wow-delay="500ms">
@@ -49,6 +50,9 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                @else
+                                    <span class="bg-light-gradient">No Track Found</span>
+                                @endif
                                 <!-- End Single Item -->
                             </div>
                         </div>
@@ -61,8 +65,8 @@
                                     <h4>Search</h4>
                                 </div>
                                 <div class="sidebar-info">
-                                    <form>
-                                        <input type="text" name="text" class="form-control">
+                                    <form type="get" action="{{url("music/{$category}")}}">
+                                        <input type="text" name="search" autocomplete="on" value="{{@$search}}" class="form-control">
                                         <button type="submit"><i class="fas fa-search"></i></button>
                                     </form>
                                 </div>
