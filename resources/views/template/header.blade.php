@@ -102,7 +102,7 @@
                         <a href="{{url('/')}}">Home</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Music</a>
+                        <a href="{{url('music')}}" class="dropdown-toggle" data-toggle="dropdown" >Music</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url('music/rock')}}">Rock</a></li>
                             <li><a href="{{url('music/pop')}}">Pop</a></li>

@@ -40,3 +40,11 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/music/{type?}', function ($type = null) {
+    return view('music', compact(['type']));
+});
+
+Route::get('/music/{type}/{id}', function ($type,$id) {
+   return view('single-music', compact(['type', 'id']));
+});
