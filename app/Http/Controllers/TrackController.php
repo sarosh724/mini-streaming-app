@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 
 class TrackController extends Controller
 {
-    public function index($category){
+    public function index(Request $request, $category){
 
-        $tracks = Track::where('category', $category)->get();
+        $search = $request->search;
+        if(strlen($search) > 0){
+            $tracks = Track::where('title', 'like', '%'.$request->search.'%')->get();
+        }
+        else {
+            $tracks = Track::where('category', $category)->get();
+        }
 
-        return view('music',compact('tracks', 'category'));
+        return view('music',compact('tracks', 'category', 'search'));
     }
 
     public function show($category, $id){
