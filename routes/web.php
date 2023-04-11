@@ -43,3 +43,11 @@ Route::get('/contact', function () {
 });
 
 Route::get('music/{category}', [MusicController::class, 'index']);
+
+Route::get('/music/{type?}', function ($type = null) {
+    return view('music', compact(['type']));
+});
+
+Route::get('/music/{type}/{id}', function ($type,$id) {
+   return view('single-music', compact(['type', 'id']));
+});
