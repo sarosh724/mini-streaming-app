@@ -9,7 +9,7 @@
     <meta name="description" content="Healdi - Medical & Health Template">
 
     <!-- ========== Page Title ========== -->
-    <title>Register - Live Streaming</title>
+    <title>Register - Music Streaming</title>
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon">
 
@@ -48,10 +48,20 @@
                 <img src="{{asset('assets/img/logo.png')}}" class="logo logo-scrolled" alt="Logo">
             </a>
         </div>
-        <form method="POST" name="register-form" id="register-form">
+        <form method="POST" action="{{url('register-user')}}" name="register-form" id="register-form">
+            @csrf
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="form-group">
-                <label class="form-label required" for="username">Username</label>
-                <input type="text" class="form-control shadow-none" name="username" id="username" required="">
+                <label class="form-label required" for="username">Name</label>
+                <input type="text" class="form-control shadow-none" name="name" id="username" required="">
             </div>
             <div class="form-group">
                 <label class="form-label required" for="email">Email</label>

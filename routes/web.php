@@ -1,6 +1,10 @@
 <?php
 
-use App\Http\Controllers\MusicController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\TrackController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +26,12 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/forgot', function () {
-    return view('auth.forgot');
+Route::post('register-user', [UserController::class, 'createUser']);
+Route::post('authenticate', [LoginController::class, 'authenticate']);
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('welcome');
 });
 
 Route::get('/reset', function () {
@@ -42,12 +50,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('music/{category}', [MusicController::class, 'index']);
+Route::get('music/{category}', [TrackController::class, 'index']);
 
-Route::get('/music/{type?}', function ($type = null) {
-    return view('music', compact(['type']));
-});
+Route::get('music/{category}/{id}', [TrackController::class, 'show']);
 
-Route::get('/music/{type}/{id}', function ($type,$id) {
-   return view('single-music', compact(['type', 'id']));
-});
+Route::post('comments/store', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');

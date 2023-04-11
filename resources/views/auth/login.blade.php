@@ -9,7 +9,7 @@
     <meta name="description" content="Healdi - Medical & Health Template">
 
     <!-- ========== Page Title ========== -->
-    <title>Login - Live Streaming</title>
+    <title>Login - Music Streaming</title>
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon">
 
@@ -47,17 +47,15 @@
                 <img src="{{asset('assets/img/logo.png')}}" class="logo logo-scrolled" alt="Logo">
             </a>
         </div>
-        <form method="POST" name="login-form" id="login-form">
+        <form method="POST" action="{{url('authenticate')}}" name="login-form" id="login-form">
+            @csrf
             <div class="form-group">
-                <label class="form-label required" for="username">Username</label>
-                <input type="text" class="form-control shadow-none" name="username" id="username" required="">
+                <label class="form-label required" for="username">Email</label>
+                <input type="text" class="form-control shadow-none" name="email" id="email" required="">
             </div>
             <div class="form-group">
                 <div class="d-flex justify-content-between">
                     <label class="form-label required" for="password">Password</label>
-                    <a href="{{url('forgot')}}" style="text-decoration: underline;">
-                        Forgot Password?
-                    </a>
                 </div>
                 <div class="input-group">
                     <input type="password" class="form-control shadow-none"
@@ -73,6 +71,15 @@
             <div>
                 <button class="btn btn-sm btn-gradient btn-block">Signin</button>
             </div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </form>
         <div class="mt-2 text-center">
                 <span>
@@ -122,7 +129,8 @@
         $(document).ready(function (){
             $("#login-form").validate({
                 rules:{
-                    username: {
+                    email: {
+                        email: true,
                         required:true
                     },
                     password: {
@@ -130,8 +138,9 @@
                     }
                 },
                 messages:{
-                    username: {
-                        required:"Username is Required*"
+                    email: {
+                        required:"Email is Required*",
+                        email: "Please enter Valid Email*"
                     },
                     password: {
                         required: "Password is Required*",

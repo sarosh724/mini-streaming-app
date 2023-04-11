@@ -9,7 +9,7 @@
     <meta name="description" content="Healdi - Medical & Health Template">
 
     <!-- ========== Page Title ========== -->
-    <title>@yield('page-name') - Live Streaming</title>
+    <title>@yield('page-name') - Music Streaming</title>
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon">
 
@@ -72,12 +72,18 @@
             <div class="attr-nav extra-color">
                 <ul>
                     <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
+                    @if (!(auth()->check()))
                     <li>
                         <a href="{{url('login')}}" class="btn-login"><i class="fa fa-sign-in-alt mr-1"></i>Login</a>
                     </li>
                     <li>
                         <a href="{{url('register')}}" class="btn-register"><i class="fa fa-sign-out-alt mr-1"></i>Register</a>
                     </li>
+                    @else
+                        <li>
+                            <a href="{{url('logout')}}" class="btn-logout"><i class="fa fa-sign-out-alt mr-1"></i>Logout</a>
+                        </li>
+                    @endif
 {{--                    <li class="side-menu"><a href="#"><i class="fas fa-th-large"></i></a></li>--}}
                 </ul>
             </div>
