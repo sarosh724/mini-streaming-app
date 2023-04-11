@@ -1,11 +1,11 @@
 @extends('template.index')
 
 @section('page-name')
-    Music
+    {{@$category}} Music
 @stop
 
 @section('content')
-    @include('partials.breadcrumb', ['list' => ['/' => 'home', 'music' => 'music'], 'heading' => 'music'])
+    @include('partials.breadcrumb', ['list' => ['/' => 'home', "$category" => $category . ' Music'], 'heading' => $category . ' Music'])
 
     <!-- Start Blog
     ============================================= -->
@@ -20,14 +20,31 @@
                                 @foreach($tracks AS $track)
                                 <div class="col-lg-6 col-md-6 single-item">
                                     <div class="item wow fadeInUp" data-wow-delay="500ms">
-                                        <div class="thumb">
-                                            <a href="{{url("/music/{$category}/{$track->id}")}}"><img src="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}" width="800" height="300" alt="Thumb"></a>
-                                            <div class="">
-                                                {{$track->title}}
+                                        <div class="thumb bg-primary rounded shadow" style="position:relative;">
+                                            <a href="{{url("/music/{$category}/{$track->id}")}}">
+                                                @if($track->thumbnail_path)
+                                                <img src="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}"
+                                                     width="100%" height="280px" alt="{{$track->title}}"
+                                                     style="object-fit: cover; object-position: center;">
+                                                @else
+                                                    <img src="{{asset("assets/img/default-music.png")}}"
+                                                         width="100%" height="280px" alt="{{$track->title}}"
+                                                         style="object-fit: cover; object-position: center;">
+                                                @endif
+                                            </a>
+                                            <div class="my-overlay rounded fadeInUp">
+                                                <span>
+                                                    <a href="{{url("/music/{$category}/{$track->id}")}}" class="text-light">
+                                                        <i class="fa fa-play-circle fa-lg"  style="font-size: 4.5rem;"></i>
+                                                    </a>
+                                                </span>
                                             </div>
-                                            <audio controls autoplay>
-                                                <source src="{{asset("assets/audios/{$track->file_path}")}}" type="audio/mpeg">
-                                            </audio>
+{{--                                            <div class="">--}}
+{{--                                                {{$track->title}}--}}
+{{--                                            </div>--}}
+{{--                                            <audio controls autoplay>--}}
+{{--                                                <source src="{{asset("assets/audios/{$track->file_path}")}}" type="audio/mpeg">--}}
+{{--                                            </audio>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +83,7 @@
                                             <a href="{{url('music/hiphop')}}">Hip Hop</a>
                                         </li>
                                         <li>
-                                            <a href="{{url('music/classical')}}">Classical</a>
+                                            <a href="{{url('music/classic')}}">Classical</a>
                                         </li>
                                         <li>
                                             <a href="{{url('music/funk')}}">Funk</a>

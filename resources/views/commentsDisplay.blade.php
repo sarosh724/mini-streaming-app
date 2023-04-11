@@ -1,37 +1,41 @@
-@foreach($comments as $comment)
+<div class="mb-3 card border shadow-sm">
+    <div class="card-body">
+        @foreach($comments as $comment)
 
-    <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
+            <div class="display-comment" @if($comment->parent_id != null) style="margin-left:40px;" @endif>
 
-        <strong>{{ $comment->user->name }}</strong>
+                <strong>{{ $comment->user->name }}</strong>
 
-        <p>{{ $comment->body }}</p>
+                <p>{{ $comment->body }}</p>
 
-        <a href="" id="reply"></a>
+                <a href="" id="reply"></a>
 
-        <form method="post" action="{{ route('comments.store') }}">
+                <form method="post" action="{{ route('comments.store') }}">
 
-            @csrf
+                    @csrf
 
-            <div class="form-group">
+                    <div class="form-group">
 
-                <input type="text" name="body" class="form-control" />
+                        <input type="text" name="body" class="form-control" />
 
-                <input type="hidden" name="track_id" value="{{ $track_id }}" />
+                        <input type="hidden" name="track_id" value="{{ $track_id }}" />
 
-                <input type="hidden" name="parent_id" value="{{ $comment->id }}" />
+                        <input type="hidden" name="parent_id" value="{{ $comment->id }}" />
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-sm btn-warning" value="Reply" />
+
+                    </div>
+
+                </form>
+
+                @include('commentsDisplay', ['comments' => $comment->replies])
 
             </div>
 
-            <div class="form-group">
-
-                <input type="submit" class="btn btn-warning" value="Reply" />
-
-            </div>
-
-        </form>
-
-        @include('commentsDisplay', ['comments' => $comment->replies])
-
+        @endforeach
     </div>
-
-@endforeach
+</div>

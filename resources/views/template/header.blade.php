@@ -81,6 +81,9 @@
                     </li>
                     @else
                         <li>
+                            <a href="javascript:void(0);"><small>Welcome: <b>{{auth()->user()->name}}</b></small></a>
+                        </li>
+                        <li>
                             <a href="{{url('logout')}}" class="btn-logout"><i class="fa fa-sign-out-alt mr-1"></i>Logout</a>
                         </li>
                     @endif
@@ -108,12 +111,12 @@
                         <a href="{{url('/')}}">Home</a>
                     </li>
                     <li class="dropdown">
-                        <a href="{{url('music')}}" class="dropdown-toggle" data-toggle="dropdown" >Music</a>
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" >Music</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{url('music/rock')}}">Rock</a></li>
                             <li><a href="{{url('music/pop')}}">Pop</a></li>
                             <li><a href="{{url('music/hiphop')}}">Hip Hop</a></li>
-                            <li><a href="{{url('music/classical')}}">Classical</a></li>
+                            <li><a href="{{url('music/classic')}}">Classical</a></li>
                             <li><a href="{{url('music/funk')}}">Funk</a></li>
                             <li><a href="{{url('music/jazz')}}">Jazz</a></li>
                         </ul>
