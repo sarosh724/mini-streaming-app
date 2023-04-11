@@ -6,7 +6,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner carousel-zoom">
             <div class="carousel-item active">
-                <div class="slider-thumb bg-cover" style="background-image: url(assets/img/maindash.jpg);"></div>
+                <div class="slider-thumb bg-cover" style="background-image: url({{asset('assets/banners/banner-1.jpg')}});"></div>
                 <div class="box-table">
                     <div class="box-cell shadow dark">
                         <div class="container">
@@ -15,7 +15,7 @@
                                     <div class="content">
                                         <h2 data-animation="animated slideInRight">Meet the <strong>Best Doctors</strong></h2>
                                         <h4 data-animation="animated slideInLeft">Best institution, Good services</h4>
-                                        <a data-animation="animated fadeInUp" class="btn btn-md btn-gradient" href="#">Discover More</a>
+                                        <a data-animation="animated fadeInUp" class="btn btn-md btn-gradient" href="#music-box">Discover More</a>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="slider-thumb bg-cover" style="background-image: url(assets/img/2440x1578.png);"></div>
+                <div class="slider-thumb bg-cover" style="background-image:url({{asset('assets/banners/banner-2.jpg')}});"></div>
                 <div class="box-table">
                     <div class="box-cell shadow dark">
                         <div class="container">
@@ -33,7 +33,7 @@
                                     <div class="content">
                                         <h2 data-animation="animated slideInRight">Meet the <strong>Best Hospital</strong></h2>
                                         <h4 data-animation="animated slideInLeft">Best institution, Good services</h4>
-                                        <a data-animation="animated fadeInUp" class="btn btn-md btn-gradient" href="#">Discover More</a>
+                                        <a data-animation="animated fadeInUp" class="btn btn-md btn-gradient" href="#music-box">Discover More</a>
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="shape">
-                <img src="assets/img/shape/2.png" alt="Shape">
+                <img src="{{asset('assets/img/shape/2.png')}}" alt="Shape">
             </div>
         </div>
         <!-- End Wrapper for slides -->

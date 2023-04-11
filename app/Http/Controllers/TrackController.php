@@ -19,4 +19,11 @@ class TrackController extends Controller
 
         return view('single-music', compact('track', 'category'));
     }
+
+    public function listing()
+    {
+        $tracks = Track::all();
+
+        return view('welcome', compact(['tracks']));
+    }
 }
