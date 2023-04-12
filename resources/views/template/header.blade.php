@@ -73,7 +73,6 @@
             <!-- Start Attribute Navigation -->
             <div class="attr-nav extra-color">
                 <ul>
-                    <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
                     @if (!(auth()->check()))
                     <li>
                         <a href="{{url('login')}}" class="btn-login"><i class="fa fa-sign-in-alt mr-1"></i>Login</a>
@@ -126,9 +125,6 @@
                     <li>
                         <a href="{{url('about')}}">About</a>
                     </li>
-                    <li>
-                        <a href="{{url('contact')}}">Contact</a>
-                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
@@ -141,7 +137,6 @@
                 <p>
                     Arrived compass prepare an on as. Reasonable particular on my it in sympathize. Size now easy eat hand how. Unwilling he departure elsewhere dejection at. Heart large seems may purse means few blind.
                 </p>
-                <a href="{{url('contact')}}" class="btn btn-theme effect btn-sm" data-animation="animated slideInUp">Contact</a>
             </div>
             <div class="widget">
                 <h4 class="title">Additional Links</h4>

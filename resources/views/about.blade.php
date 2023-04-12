@@ -23,10 +23,10 @@
 
                 <div class="col-lg-6 thumb">
                     <div class="thumb-box">
-                        <img src="{{asset('assets/img/800x800.png')}}" alt="Thumb">
+                        <img src="{{asset('assets/thumbnails/artworks-000572576414-wv5aab-t500x500.jpg')}}" alt="Thumb">
                         <div class="intro-video">
                             <div class="video">
-                                <a href="https://www.youtube.com/watch?v=5vY-D42NFP4" class="popup-youtube relative theme video-play-button item-center">
+                                <a href="https://www.youtube.com/watch?v=JZjAg6fK-BQ" class="popup-youtube relative theme video-play-button item-center">
                                     <i class="fa fa-play"></i>
                                 </a>
                             </div>
@@ -41,32 +41,13 @@
                 </div>
 
                 <div class="col-lg-6 info">
-                    <h5>Has been working since 2000</h5>
-                    <h2>A Great Place to Work. A Great Place to <strong>Receive Care</strong>. Leading Medicine.</h2>
+                    <h5>Has been working since forever</h5>
+                    <h2>A Great Place to Relax. A Great Place to <strong>Listen Music</strong>. Leading Platform.</h2>
                     <p>
-                        Pursuit chamber as elderly amongst on. Distant however warrant farther to of. My justice wishing prudent waiting in be. Who decisively attachment has dispatched. Fruit defer in party me built under first. Forbade him but savings sending ham general.
+                        A music web app is an online platform designed to enable users to listen to, discover, organize, and share music. The app can be accessed through a web browser or a dedicated mobile application, and it may offer a wide range of features and services, depending on its design and purpose..
                     </p>
-                    <ul>
-                        <li>
-                            <div class="icon">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                            <div class="content">
-                                <h5><a href="#">Online Appoinment</a></h5>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon">
-                                <i class="flaticon-drugs"></i>
-                            </div>
-                            <div class="content">
-                                <h5><a href="#">Health Queries</a></h5>
-                            </div>
-                        </li>
-                    </ul>
-                    <a class="btn btn-md btn-gradient" href="#"><i class="fas fa-angle-right"></i> Make Appoinment</a>
+                    <a class="btn btn-md btn-gradient" href="/"><i class="fas fa-angle-right"></i> Discover Music</a>
                 </div>
-
             </div>
         </div>
     </div>

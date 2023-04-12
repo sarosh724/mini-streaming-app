@@ -56,9 +56,6 @@
                             <li>
                                 <a href="{{url('about')}}">About</a>
                             </li>
-                            <li>
-                                <a href="{{url('contact')}}">Contact</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -88,20 +85,7 @@
         <div class="container">
             <div class="row align-center">
                 <div class="col-md-6">
-                    <p>Copyright &copy;  2023. Designed by <a href="#">Soft Solutions</a></p>
-                </div>
-                <div class="col-md-6 text-right social">
-                    <ul>
-                        <li>
-                            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-youtube"></i> Youtube</a>
-                        </li>
-                    </ul>
+                    <p>Copyright &copy; {{date('Y')}}. Designed by <a href="#">Soft Solutions</a></p>
                 </div>
             </div>
         </div>

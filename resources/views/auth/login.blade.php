@@ -11,7 +11,7 @@
     <!-- ========== Page Title ========== -->
     <title>Login - Music Streaming</title>
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/img/logo-3.png')}}" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
@@ -44,7 +44,7 @@
     <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 col-10 p-4 bg-white rounded">
         <div class="mb-3 text-center">
             <a href="{{url('/')}}">
-                <img src="{{asset('assets/img/logo.png')}}" class="logo logo-scrolled" alt="Logo">
+                <img src="{{asset('assets/img/logo-3.png')}}" class="logo logo-scrolled" alt="Logo">
             </a>
         </div>
         <form method="POST" action="{{url('authenticate')}}" name="login-form" id="login-form">
