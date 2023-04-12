@@ -154,6 +154,8 @@
 <script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
 <script src="{{asset('assets/js/bootsnav.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/js/star-rating.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.js"></script>
 @yield('scripts')
 </body>
 </html>
