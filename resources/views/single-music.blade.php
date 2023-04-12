@@ -21,7 +21,7 @@
                                     <div class="thumb border shadow-sm p-0">
                                         @if($track->type == 'video')
                                             @if($track->file_path)
-                                                <video width="100%" height="450px" controls>
+                                                <video width="100%" height="450px" controls poster="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}">
                                                     <source src="{{asset("assets/videos/{$track->file_path}")}}" type="video/mp4">
                                                     <source src="{{asset("assets/videos/{$track->file_path}")}}" type="video/mkv">
                                                     your browser does not support the file type
