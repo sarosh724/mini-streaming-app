@@ -6,9 +6,9 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 item">
                     <div class="f-item about">
-                        <img src="{{asset('assets/img/logo-light.png')}}" alt="Logo">
+                        <img src="{{asset('assets/img/logo-3.png')}}" class="logo" alt="Logo">
                         <p>
-                            Required honoured trifling eat pleasure man relation. Assurance yet bed was improving furniture man. Distrusts delighted
+                            Let the music speak. My brain is 85% song lyrics. Music is my life, we can't live without each other.
                         </p>
                         <div class="address">
                             <ul>
@@ -18,7 +18,7 @@
                                     </div>
                                     <div class="info">
                                         <h5>Email:</h5>
-                                        <span>support@validtemplates.com</span>
+                                        <span>support@musicmob.com</span>
                                     </div>
                                 </li>
                                 <li>
@@ -37,51 +37,27 @@
 
                 <div class="single-item col-lg-2 col-md-6 item">
                     <div class="f-item link">
-                        <h4 class="widget-title">Department</h4>
+                        <h4 class="widget-title">Music</h4>
                         <ul>
-                            <li>
-                                <a href="#">Medecine & Health</a>
-                            </li>
-                            <li>
-                                <a href="#">Dental Care</a>
-                            </li>
-                            <li>
-                                <a href="#">Eye Treatment</a>
-                            </li>
-                            <li>
-                                <a href="#">Children Chare</a>
-                            </li>
-                            <li>
-                                <a href="#">Traumatology</a>
-                            </li>
-                            <li>
-                                <a href="#">X-ray</a>
-                            </li>
+                            <li><a href="{{url('music/rock')}}">Rock</a></li>
+                            <li><a href="{{url('music/pop')}}">Pop</a></li>
+                            <li><a href="{{url('music/hiphop')}}">Hip Hop</a></li>
+                            <li><a href="{{url('music/classic')}}">Classical</a></li>
+                            <li><a href="{{url('music/funk')}}">Funk</a></li>
+                            <li><a href="{{url('music/jazz')}}">Jazz</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="single-item col-lg-2 col-md-6 item">
                     <div class="f-item link">
-                        <h4 class="widget-title">Usefull Links</h4>
+                        <h4 class="widget-title">Useful Links</h4>
                         <ul>
                             <li>
-                                <a href="#">Ambulance</a>
+                                <a href="{{url('about')}}">About</a>
                             </li>
                             <li>
-                                <a href="#">Emergency</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#">Project</a>
-                            </li>
-                            <li>
-                                <a href="#">About Us</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
+                                <a href="{{url('contact')}}">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -112,7 +88,7 @@
         <div class="container">
             <div class="row align-center">
                 <div class="col-md-6">
-                    <p>Copyright &copy;  2020. Designed by <a href="#">validtemplatess</a></p>
+                    <p>Copyright &copy;  2023. Designed by <a href="#">Soft Solutions</a></p>
                 </div>
                 <div class="col-md-6 text-right social">
                     <ul>

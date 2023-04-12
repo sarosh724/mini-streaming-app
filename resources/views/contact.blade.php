@@ -14,7 +14,8 @@
             <div class="contact-items">
                 <div class="row">
 
-                    <div class="col-lg-7 wow address-box fadeInUp bg-cover" style="background-image: url("{{asset('assets/img/2440x1578.png')}}");">
+                    <div class="col-lg-7 wow address-box fadeInUp bg-cover"
+                         style="background-image: url({{asset('assets/img/2440x1578.png')}});">
                         <div class="address-info">
                             <ul>
                                 <li>
@@ -23,7 +24,7 @@
                                 </li>
                                 <li>
                                     <h5><i class="flaticon-email"></i> Email</h5>
-                                    <span>info@healdi.com</span>
+                                    <span>info@musicmob.com</span>
                                 </li>
                             </ul>
                         </div>
@@ -31,7 +32,7 @@
 
                     <div class="col-lg-5 wow fadeInLeft contact-form-box">
                         <h2>Need help? <strong>Let's ask your questions</strong></h2>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form">
+                        <form action="" method="POST" class="contact-form">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">

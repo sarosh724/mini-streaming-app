@@ -5877,3 +5877,8 @@ label.error {
 .form-control:focus{
     box-shadow: none !important;
 }
+
+.logo{
+    width: 60px;
+    height: 60px;
+}

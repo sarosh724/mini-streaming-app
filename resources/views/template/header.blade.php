@@ -11,7 +11,7 @@
     <!-- ========== Page Title ========== -->
     <title>@yield('page-name') - Music Streaming</title>
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/img/logo-3.png')}}" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
@@ -100,8 +100,8 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="{{url('/')}}">
-                    <img src="{{asset('assets/img/logo-light.png')}}" class="logo logo-display" alt="Logo">
-                    <img src="{{asset('assets/img/logo.png')}}" class="logo logo-scrolled" alt="Logo">
+                    <img src="{{asset('assets/img/logo-3.png')}}" class="logo logo-display" alt="Logo">
+                    <img src="{{asset('assets/img/logo-3.png')}}" class="logo logo-scrolled" alt="Logo">
                 </a>
             </div>
             <!-- End Header Navigation -->
