@@ -53,3 +53,4 @@ Route::get('music/{category}{search?}', [TrackController::class, 'index']);
 Route::get('music/{category}/{id}', [TrackController::class, 'show']);
 
 Route::post('comments/store', [CommentController::class, 'store'])->middleware('auth')->name('comments.store');
+Route::post('track/rate', [TrackController::class, 'rateTrack']);

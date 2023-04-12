@@ -54,6 +54,13 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <input id="overall-rating" class="rating rating-loading" value="{{$avgRating}}" data-min="0" data-max="5" data-step="0.5" data-size="md"><hr/>
+
+                            @if ((auth()->check()))
+                            <label for="rating" class="control-label">Give a rating for this track:</label>
+                            <input id="rating" class="rating rating-loading" value="{{@$personalRating->rating}}" data-min="0" data-max="5" data-step="0.5" data-size="md"><hr/>
+                            @endif
                             @include('commentsDisplay', ['comments' => $track->comments, 'track_id' => $track->id])
                             <div class="card">
                                 <div class="card-header">
@@ -125,4 +132,50 @@
         </div>
     </div>
     <!-- End Blog -->
+@stop
+@section('scripts')
+<script>
+    $('#rating').on('rating:change', function() {
+        let rating = $('#rating').val();
+        $.ajax({
+            type: "POST",
+            url: "{{url('track/rate')}}",
+            data: JSON.stringify({
+                "_token": "{{ csrf_token() }}",
+                'track_id': {{$track->id}},
+                'rating' : rating,
+                'action' : 'add/update'
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                return true;
+            },
+            error: function (error) {
+            }
+        });
+    });
+
+    $('#rating').on('rating:clear', function(event) {
+        $.ajax({
+            type: "POST",
+            url: "{{url('track/rate')}}",
+            data: JSON.stringify({
+                "_token": "{{ csrf_token() }}",
+                'track_id': {{$track->id}},
+                'action' : 'delete'
+            }),
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+                return true;
+            },
+            error: function (error) {
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('#rating').rating('refresh', {disabled: false, showClear: true, showCaption: false});
+        $('#overall-rating').rating('refresh', {disabled: true, showClear: false, showCaption: false});
+    });
+</script>
 @stop
