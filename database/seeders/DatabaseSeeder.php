@@ -66,6 +66,12 @@ class DatabaseSeeder extends Seeder
                 'category' => 'rock',
                 'file_path' => 'Justin Timberlake - Cry Me A River (Official Video).mp3',
                 'thumbnail_path' => 'artworks-000069905189-mwrg8a-t500x500.jpg'
+            ],[
+                'title' => 'testing',
+                'type' => 'video',
+                'category' => 'classic',
+                'file_path' => 'vokoscreenNG-2023-03-30_12-17-04.mkv',
+                'thumbnail_path' => ''
             ]
             ];
 

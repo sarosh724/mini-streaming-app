@@ -18,11 +18,13 @@
                             <!-- Single Item -->
                             <div class="single-item">
                                 <div class="item wow fadeInUp">
-                                    <div class="thumb border shadow-sm">
+                                    <div class="thumb border shadow-sm p-0">
                                         @if($track->type == 'video')
-                                            @if($track->thumbnail_path)
+                                            @if($track->file_path)
                                                 <video width="100%" height="450px" controls>
-                                                    <source src="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}">
+                                                    <source src="{{asset("assets/videos/{$track->file_path}")}}" type="video/mp4">
+                                                    <source src="{{asset("assets/videos/{$track->file_path}")}}" type="video/mkv">
+                                                    your browser does not support the file type
                                                 </video>
                                                 <div class="p-2 mt-2 info">
                                                     <h4 class="text-capitalize" style="color: #1ebeb6;">{{$track->title}}</h4>
@@ -82,51 +84,6 @@
                             <!-- End Single Item -->
                         </div>
                     </div>
-                    <!-- Start Sidebar -->
-                    <div class="sidebar wow fadeInLeft col-lg-4 col-md-12">
-                        <aside>
-                            <div class="sidebar-item gallery">
-                                <div class="title">
-                                    <h4>Gallery</h4>
-                                </div>
-                                <div class="sidebar-info">
-                                    <ul>
-                                        <li>
-                                            <a href="{{url('/music/pop/1')}}">
-                                                <img src="{{asset('assets/img/800x800.png')}}" alt="thumb">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/music/pop/1')}}">
-                                                <img src="{{asset('assets/img/800x800.png')}}" alt="thumb">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/music/pop/1')}}">
-                                                <img src="{{asset('assets/img/800x800.png')}}" alt="thumb">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/music/pop/1')}}">
-                                                <img src="{{asset('assets/img/800x800.png')}}" alt="thumb">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/music/pop/1')}}">
-                                                <img src="{{asset('assets/img/800x800.png')}}" alt="thumb">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/music/pop/1')}}">
-                                                <img src="{{asset('assets/img/800x800.png')}}" alt="thumb">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                    <!-- End Start Sidebar -->
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+@if(count($comments))
 <div class="mb-3 card border shadow-sm">
     <div class="card-body">
         @foreach($comments as $comment)
@@ -39,3 +40,4 @@
         @endforeach
     </div>
 </div>
+    @endif
