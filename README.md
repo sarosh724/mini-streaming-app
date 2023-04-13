@@ -7,6 +7,7 @@
 </ol>
 <h3>Steps/Commands to make it run</h3>
 <ul>
+    <li>composer install</li>
     <li>update .env with your DB credentails</li>
     <li>php artisan migrate --seed</li>
     <li>php artisan serve</li>
