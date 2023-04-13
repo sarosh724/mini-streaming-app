@@ -33,13 +33,13 @@ class DatabaseSeeder extends Seeder
             ],[
                 'title' => 'starboy',
                 'type' => 'audio',
-                'category' => 'pop',
+                'category' => 'jazz',
                 'file_path' => 'The Weeknd - Starboy ft. Daft Punk (Official Video).mp3',
                 'thumbnail_path' => '7aa3bebecdfc0a7f9140c479bcb52182.1000x1000x1.png'
             ],[
                 'title' => 'reminder',
                 'type' => 'audio',
-                'category' => 'hip hop',
+                'category' => 'hiphop',
                 'file_path' => 'The Weeknd - Reminder (Official Video).mp3',
                 'thumbnail_path' => 'artworks-000572576414-wv5aab-t500x500.jpg'
             ],[

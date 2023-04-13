@@ -62,7 +62,7 @@
                             @if ((auth()->check()))
                             <label for="rating" class="control-label">Give a rating for this track:</label>
                             <input id="rating" class="rating rating-loading" value="{{@$personalRating->rating}}" data-min="0" data-max="5" data-step="0.5" data-size="md"><hr/>
-                            @endif
+
                             @include('commentsDisplay', ['comments' => $track->comments, 'track_id' => $track->id])
                             <div class="card">
                                 <div class="card-header">
@@ -81,6 +81,9 @@
                                     </form>
                                 </div>
                             </div>
+                            @else
+                                <span class="bg-light">Sign In To Rate And Add/View Comments</span>
+                            @endif
                             <!-- End Single Item -->
                         </div>
                     </div>
