@@ -31,7 +31,7 @@ Route::post('authenticate', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', function () {
     Auth::logout();
-    return view('welcome');
+    return redirect('/');
 });
 
 Route::get('/reset', function () {
