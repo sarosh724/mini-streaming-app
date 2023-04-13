@@ -18,9 +18,9 @@
     <li>User can rate a song</li>
 </ul>
 <h3>Some Screenshots</h3>
-<img src="Screenshot 2023-04-13 at 14-21-42 Home - Music Streaming.png">
-<img src="Screenshot 2023-04-13 at 14-36-26 Home - Music Streaming.png">
-<img src="Screenshot 2023-04-13 at 14-41-23 pop Music - Music Streaming.png">
-<img src="Screenshot 2023-04-13 at 14-36-55 pop Music - Music Streaming.png">
+<img src="public/assets/screenshots/Screenshot 2023-04-13 at 14-21-42 Home - Music Streaming.png">
+<img src="public/assets/screenshots/Screenshot 2023-04-13 at 14-36-26 Home - Music Streaming.png">
+<img src="public/assets/screenshots/Screenshot 2023-04-13 at 14-41-23 pop Music - Music Streaming.png">
+<img src="public/assets/screenshots/Screenshot 2023-04-13 at 14-36-55 pop Music - Music Streaming.png">
 
 
