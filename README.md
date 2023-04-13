@@ -1,7 +1,10 @@
 <h1>This is a mini project created as a side hobby</h1>
-<p>My colleage Ahmed Sayyam has collaborated in this project with me</p>
 <p>This project is basically a mini music streaming web based application developed in Laravel 9</p>
-
+<h3>Collaborators</h3>
+<ol>
+<li>Ahmed Sayyam <a href="https://github.com/AhmedSayyam" target="_blank">Github Profile</a></li> 
+<li>Sarosh <a href="https://github.com/sarosh724" target="_blank">Github Profile</a></li> 
+</ol>
 <h3>Steps/Commands to make it run</h3>
 <ul>
     <li>update .env with your DB credentails</li>
