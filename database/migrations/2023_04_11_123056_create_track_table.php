@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('type');
-            $table->string('category');
+            $table->bigInteger('music_category_id');
             $table->longText('file_path');
             $table->longText('thumbnail_path');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

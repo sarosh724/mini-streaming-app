@@ -23,7 +23,7 @@
                                     <div class="col-lg-4 col-md-4 single-item">
                                         <div class="item wow fadeInUp" data-wow-delay="500ms">
                                             <div class="thumb bg-primary rounded shadow" style="position:relative;">
-                                                <a href="{{url("/music/{$track->category}/{$track->id}")}}">
+                                                <a href="{{url("/music/{$track->music_category_id}/{$track->id}")}}">
                                                     @if($track->thumbnail_path)
                                                         <img src="{{asset("assets/thumbnails/{$track->thumbnail_path}")}}"
                                                              width="100%" height="300px" alt="{{$track->title}}"
@@ -36,17 +36,11 @@
                                                 </a>
                                                 <div class="my-overlay rounded fadeInUp">
                                                 <span>
-                                                    <a href="{{url("/music/{$track->category}/{$track->id}")}}" class="text-light">
+                                                    <a href="{{url("/music/{$track->music_category_id}/{$track->id}")}}" class="text-light">
                                                         <i class="fa fa-play-circle fa-lg"  style="font-size: 4.5rem;"></i>
                                                     </a>
                                                 </span>
                                                 </div>
-                                                {{--                                            <div class="">--}}
-                                                {{--                                                {{$track->title}}--}}
-                                                {{--                                            </div>--}}
-                                                {{--                                            <audio controls autoplay>--}}
-                                                {{--                                                <source src="{{asset("assets/audios/{$track->file_path}")}}" type="audio/mpeg">--}}
-                                                {{--                                            </audio>--}}
                                             </div>
                                         </div>
                                     </div>

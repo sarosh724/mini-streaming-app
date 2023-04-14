@@ -1,11 +1,11 @@
 @extends('template.index')
 
 @section('page-name')
-    {{$category}} Music
+{{getCategoryName($category)}} Music
 @stop
 
 @section('content')
-    @include('partials.breadcrumb', ['list' => ['/' => 'home', "music/$category" => $category . ' Music', 'title' => $track->title], 'heading' => $track->title])
+    @include('partials.breadcrumb', ['list' => ['/' => 'home', "music/$category" => getCategoryName($category) . ' Music', 'title' => $track->title], 'heading' => $track->title])
 
     <!-- Start Blog
     ============================================= -->

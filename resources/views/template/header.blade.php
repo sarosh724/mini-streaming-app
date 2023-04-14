@@ -114,12 +114,9 @@
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" >Music</a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url('music/rock')}}">Rock</a></li>
-                            <li><a href="{{url('music/pop')}}">Pop</a></li>
-                            <li><a href="{{url('music/hiphop')}}">Hip Hop</a></li>
-                            <li><a href="{{url('music/classic')}}">Classical</a></li>
-                            <li><a href="{{url('music/funk')}}">Funk</a></li>
-                            <li><a href="{{url('music/jazz')}}">Jazz</a></li>
+                            @foreach(allMusicCategories() as $item)
+                            <li><a href="{{url('music')}}/{{$item->id}}">{{$item->name}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li>

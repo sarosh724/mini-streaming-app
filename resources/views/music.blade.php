@@ -1,11 +1,11 @@
 @extends('template.index')
 
 @section('page-name')
-    {{@$category}} Music
+{{getCategoryName($category)}} Music
 @stop
 
 @section('content')
-    @include('partials.breadcrumb', ['list' => ['/' => 'home', "$category" => $category . ' Music'], 'heading' => $category . ' Music'])
+    @include('partials.breadcrumb', ['list' => ['/' => 'home', "$category" => getCategoryName($category) . ' Music'], 'heading' => getCategoryName($category) . ' Music'])
 
     <!-- Start Blog
     ============================================= -->
@@ -40,12 +40,6 @@
                                                     </a>
                                                 </span>
                                             </div>
-{{--                                            <div class="">--}}
-{{--                                                {{$track->title}}--}}
-{{--                                            </div>--}}
-{{--                                            <audio controls autoplay>--}}
-{{--                                                <source src="{{asset("assets/audios/{$track->file_path}")}}" type="audio/mpeg">--}}
-{{--                                            </audio>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -77,24 +71,9 @@
                                 </div>
                                 <div class="sidebar-info">
                                     <ul>
-                                        <li>
-                                            <a href="{{url('music/rock')}}">Rock</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('music/pop')}}">Pop</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('music/hiphop')}}">Hip Hop</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('music/classic')}}">Classical</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('music/funk')}}">Funk</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('music/jazz')}}">Jazz</a>
-                                        </li>
+                                        @foreach(allMusicCategories() as $item)
+                                            <li><a href="{{url('music')}}/{{$item->id}}">{{$item->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
