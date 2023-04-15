@@ -121,7 +121,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{url('about')}}" style="font-size: 1.2em;">About</a>
+                        <a href="{{url('site/about')}}" style="font-size: 1.2em;">About</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

@@ -5,7 +5,7 @@
                 <ul class="list list-unstyled list-bg-white mb-0">
                     <li class="list-item">
                         <div class="border-bottom px-3 d-flex">
-                            <a class="navbar-brand logo" href="{{url('admin')}}" style="padding: 0px !important;">
+                            <a class="navbar-brand logo" href="{{url('site/admin')}}" style="padding: 0px !important;">
                                 <img  src="{{asset('assets/img/logo-3.png')}}" height="80" width="75" alt="Music Streaming Logo" class="logo-menu">
                             </a>
                             <a class="nav-link sidebar-toggle sidebar-close-btn ms-4 mt-2" style="display:none;" data-widget="pushmenu" href="javascript:void(0);" role="button"><i class="fal fa-arrow-left"></i></a>
@@ -25,7 +25,7 @@
                         <li class="list-item">
                             <ul class="list-unstyled">
                                     <li>
-                                        <a href="{{url('admin')}}" class="list-link">
+                                        <a href="{{url('site/admin')}}" class="list-link">
                                     <span class="list-icon">
                                         <i class="fas fa-tachometer-alt"></i>
                                     </span><span class="menu-title">Dashboard</span>

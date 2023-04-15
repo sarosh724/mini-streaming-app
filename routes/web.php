@@ -43,12 +43,8 @@ Route::get('/reset', function () {
 
 Route::get('/{search?}', [TrackController::class, 'listing']);
 
-Route::get('/about', function () {
+Route::get('site/about', function () {
     return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
 });
 
 Route::get('music/{category}{search?}', [TrackController::class, 'index']);
@@ -67,7 +63,7 @@ Route::get('admin/login', function () {
 
 Route::post('admin/authenticate', [AdminController::class, 'authenticate']);
 
-Route::get('admin', [AdminController::class, 'index'])->middleware('admin.auth');
+Route::get('site/admin', [AdminController::class, 'index'])->middleware('admin.auth');
 
 Route::get('admin/logout', function () {
     Auth::logout();

@@ -128,54 +128,62 @@ class TrackController extends Controller
 
     public function store(Request $request, $id=null)
     {
-        $validate = Validator::make($request->all(), [
-            'title' => 'required',
-            'category' => 'required',
-            'track_file'  =>  'required|file|mimes:mp3,mp4|max:20000',
-            'track_thumbnail' => 'required|file|image|mimes:jpeg,png,jpg|max:2000'
-        ]);
+            $validate = Validator::make($request->all(), [
+                'title' => 'required',
+                'category' => 'required',
+                'track_file'  =>  'file|mimes:mp3,mp4|max:20000',
+                'track_thumbnail' => 'file|image|mimes:jpeg,png,jpg|max:2000'
+            ]);
 
-        if ($validate->fails()) {
-            return redirect('admin/track')->withErrors($validate->errors());
+            if ($validate->fails()) {
+                return redirect('admin/track')->withErrors($validate->errors());
+
+            }
+
+            if($request->track_file){
+                $extension = $request->track_file->extension();
+                if($extension == 'mp4'){
+                    $destinationPath = 'assets/videos';
+                    $type = 'video';
+                }
+                else{
+                    $destinationPath = 'assets/audios';
+                    $type = 'audio';
+                }
+
+                $file = time().$request->track_file->getClientOriginalName();
+                $request->track_file->move(public_path($destinationPath), $file);
+            }
+
+            if($request->track_thumbnail){
+                $thumbNailDestinationPath = 'assets/thumbnails';
+
+                $thumbnail = time().$request->track_thumbnail->getClientOriginalName();
+                $request->track_thumbnail->move(public_path($thumbNailDestinationPath), $thumbnail);
+            }
+
+
+            try {
+                DB::beginTransaction();
+                $musicTrack = $id ? Track::find($id) : new Track();
+                $musicTrack->title = $request->title;
+                $musicTrack->music_category_id = $request->category;
+                if ($request->track_thumbnail) {
+                    $musicTrack->thumbnail_path = $thumbnail;
+                }
+                if ($request->track_file) {
+                    $musicTrack->file_path = $file;
+                    $musicTrack->type = $type;
+                }
+                $musicTrack->save();
+                DB::commit();
+                return redirect('admin/track');
+            } catch (\Exception $e) {
+                DB::rollBack();
+
+                return redirect('admin/track');
+            }
         }
-
-        $thumbNailDestinationPath = 'assets/thumbnails';
-        $extension = $request->track_file->extension();
-
-        if($extension == 'mp4'){
-            $destinationPath = 'assets/videos';
-            $type = 'video';
-        }
-        else{
-            $destinationPath = 'assets/audios';
-            $type = 'audio';
-        }
-
-        $file = time().$request->track_file->getClientOriginalName();
-        $request->track_file->move(public_path($destinationPath), $file);
-
-        $thumbnail = time().$request->track_thumbnail->getClientOriginalName();
-        $request->track_thumbnail->move(public_path($thumbNailDestinationPath), $thumbnail);
-
-        try {
-            DB::beginTransaction();
-            $musicTracl = $id ? Track::find($id) : new Track();
-            $musicTracl->title = $request->title;
-            $musicTracl->music_category_id = $request->category;
-            $musicTracl->file_path = $file;
-            $musicTracl->thumbnail_path = $thumbnail;
-            $musicTracl->type = $type;
-            $musicTracl->save();
-            DB::commit();
-
-            return redirect('admin/track');
-        } catch (\Exception $e) {
-            DB::rollBack();
-
-            return redirect('admin/track');
-        }
-
-    }
 
     public function destroy(Track $track, $id)
     {

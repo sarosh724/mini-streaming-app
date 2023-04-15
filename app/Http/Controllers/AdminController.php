@@ -20,8 +20,6 @@ class AdminController extends Controller
             $i++;
         }
 
-//        return $data;
-
         return view('admin.dashboard', compact('data'));
     }
 
@@ -36,7 +34,7 @@ class AdminController extends Controller
             $request->session()
                 ->regenerate();
 
-            return redirect('admin');
+            return redirect('site/admin');
         }
 
         return back()
