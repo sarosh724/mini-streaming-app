@@ -41,7 +41,7 @@ Route::get('/reset', function () {
     return view('auth.reset');
 });
 
-Route::get('/', [TrackController::class, 'listing']);
+Route::get('/{search?}', [TrackController::class, 'listing']);
 
 Route::get('/about', function () {
     return view('about');

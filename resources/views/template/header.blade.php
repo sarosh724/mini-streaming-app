@@ -56,8 +56,8 @@
             <div class="row">
                 <div class="top-search">
                     <div class="input-group">
-                        <form action="#">
-                            <input type="text" name="text" class="form-control" placeholder="Search">
+                        <form type="get" action="{{url('/')}}">
+                            <input type="text" name="search" class="form-control" value="{{@$search}}" placeholder="Search">
                             <button type="submit">
                                 <i class="ti-search"></i>
                             </button>
@@ -73,6 +73,7 @@
             <!-- Start Attribute Navigation -->
             <div class="attr-nav extra-color">
                 <ul>
+                    <li class="search"><a href="#"><i class="fas fa-search"></i></a></li>
                     @if (!(auth()->check()))
                     <li>
                         <a href="{{url('login')}}" class="btn-login"><i class="fa fa-sign-in-alt mr-1"></i>Login</a>
@@ -109,18 +110,18 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-center" data-in="#" data-out="#">
                     <li>
-                        <a href="{{url('/')}}">Home</a>
+                        <a href="{{url('/')}}" style="font-size: 1.2em;">Home</a>
                     </li>
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" >Music</a>
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 1.2em;" >Music</a>
                         <ul class="dropdown-menu">
                             @foreach(allMusicCategories() as $item)
-                            <li><a href="{{url('music')}}/{{$item->id}}">{{$item->name}}</a></li>
+                            <li><a href="{{url('music')}}/{{$item->id}}" >{{$item->name}}</a></li>
                             @endforeach
                         </ul>
                     </li>
                     <li>
-                        <a href="{{url('about')}}">About</a>
+                        <a href="{{url('about')}}" style="font-size: 1.2em;">About</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

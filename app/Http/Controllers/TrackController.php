@@ -43,12 +43,20 @@ class TrackController extends Controller
         return view('single-music', compact('track', 'category', 'personalRating', 'avgRating'));
     }
 
-    public function listing()
+    public function listing(Request $request)
     {
-        $tracks = Track::all();
+        $search = $request->search;
+        if(strlen($search) > 0){
+            $tracks = Track::where('title', 'like', '%'.$request->search.'%')
+                ->get();
+        }
+        else {
+            $tracks = Track::all();
+        }
+
         $musicCategories = MusicCategory::all();
 
-        return view('welcome', compact(['tracks', 'musicCategories']));
+        return view('welcome', compact(['tracks', 'musicCategories','search']));
     }
 
     function rateTrack(Request $request){

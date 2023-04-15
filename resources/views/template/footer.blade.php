@@ -77,17 +77,6 @@
             </div>
         </div>
     </div>
-    <!-- Start Footer Bottom -->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row align-center">
-                <div class="col-md-6">
-                    <p>Copyright &copy; {{date('Y')}}. Designed by <a href="#">Soft Solutions</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Footer Bottom -->
 </footer>
 <!-- End Footer -->
 
