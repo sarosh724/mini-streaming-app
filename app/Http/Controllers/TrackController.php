@@ -131,8 +131,8 @@ class TrackController extends Controller
             $validate = Validator::make($request->all(), [
                 'title' => 'required',
                 'category' => 'required',
-                'track_file'  =>  'file|mimes:mp3,mp4|max:20000',
-                'track_thumbnail' => 'file|image|mimes:jpeg,png,jpg|max:2000'
+                'track_file'  =>  'file|mimes:mp3,mp4|max:200000',
+                'track_thumbnail' => 'file|image|mimes:jpeg,png,jpg|max:20000'
             ]);
 
             if ($validate->fails()) {
